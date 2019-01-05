@@ -406,7 +406,7 @@ def main(num_of_tags:int=10, num_of_rec:int=30, predicted_score:float=5.0, use_l
             divide(sample_word:list, rf)
         visualization1(score:dict, tag:dict, rec_reviews:dict)
         recommand_based_on_one_review(review:str, tag_num:int=3, rec_num:int=15, loaded:bool=False)
-        visualization2(tag:list, rec_reviews:list)
+        visualization2(review:str, tag:list, rec_reviews:list)
     """
     load()
     extract_labels(threshold=90000) #len(reviews)
