@@ -1,0 +1,7 @@
+jieba==0.39
+pyquery==1.4.0
+requests==2.19.1
+stanfordcorenlp==3.9.1.1
+gensim==3.6.0
+numpy==1.15.1
+scikit_learn==0.20.2
