@@ -289,7 +289,7 @@ def visualization1(score:dict, tag:dict, rec_reviews:dict):
         rec_reviews: rec_reviews['剧情'][0/1] = positive/negative reviews on 剧情
     Example
         >>> score, tag, rec_reviews = rate_tag_recommand()
-        >>> visualization(score, tag, rec_reviews)
+        >>> visualization1(score, tag, rec_reviews)
         >>> 主题 : 5.4
 
             标签: ['好', '远', '过硬', '好看', '鲜明', '一般', '够', '差', '幼稚']
@@ -371,22 +371,26 @@ def recommand_based_on_one_review(review:str, tag_num:int=3, rec_num:int=15, loa
     return tag, rec_reviews
 
 
-def visualization2(tag:list, rec_reviews:list):
+def visualization2(review:str, tag:list, rec_reviews:list):
     """
     Function
         Print output of recommand_based_on_one_review properly
     Input (output of recommand_based_on_one_review)
+        review: Original review
         tag: tags extracted from the review
         rec_reviews: similar recommanded reviews
     Example
         >>> tag, rec_reviews = rate_tag_recommand()
-        >>> visualization(tag, rec_reviews)
-        >>> 标签: ['性格', '剧情', '主题']
+        >>> visualization2(review='性格差，剧情奇怪，主题不行', tag, rec_reviews)
+        >>> 你的评论: 性格差，剧情奇怪，主题不行
+        
+            提取方向: ['性格', '剧情', '主题']
 
             相关评论
             1 完全就是黄渤带着一帮朋友...
     """
-    print("\n标签:", tag)
+    print("\n你的评论:", review)
+    print("\n提取方向:", tag)
     print("\n相关评论")
     for i in range(len(rec_reviews)):
         print(i + 1, rec_reviews[i])
@@ -409,7 +413,7 @@ def main(num_of_tags:int=10, num_of_rec:int=30, predicted_score:float=5.0, use_l
     score, tag, rec_reviews = rate_tag_recommand()
     visualization1(score, tag, rec_reviews)
     tag, rec_reviews = recommand_based_on_one_review(review='性格差，剧情奇怪，主题不行')
-    visualization2(tag, rec_reviews)
+    visualization2('性格差，剧情奇怪，主题不行', tag, rec_reviews)
 
 
 if __name__ == "__main__":
