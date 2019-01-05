@@ -12,7 +12,7 @@
 
 # 项目环境
 1. Python环境 (pip install -r requirements.txt)
-    * python 3.7.0
+    * python==3.7.0
     * jieba==0.39
     * pyquery==1.4.0
     * requests==2.19.1
@@ -46,8 +46,9 @@
       * import stanfordcorenlp 可将此Java包封装为Python
 5. 说明
     * 所有未在此文件内的文件下载地址：https://pan.baidu.com/s/1NOUgfCeEJkJYCqm8pVgaew
-    * 所有未在此文件内的文件也须与.py放在同一目录下
+    * 所有未在此文件内的文件也须与.py放在同一目录下 (完整放置效果见complete_file_placement.png)
     * 具体依赖文件格式，内容，用途，详见.py的注释
 
-# 联系方式
+# 项目备注
+* 最终运行效果见result.jpg
 * 有关项目的任何建议与问题，请联系729020210@qq.com
