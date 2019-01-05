@@ -11,31 +11,43 @@
 5. 四个步骤既有依赖关系，又可单独执行。单独执行请放置好相关依赖文件 (作者运行相关脚本得到的过程文件)
 
 # 项目环境
-1. Python环境
+1. Python环境 (pip install -r requirements.txt)
     * python 3.7.0
-    * requirement.txt (pip install -r requirements.txt)
+    * jieba==0.39
+    * pyquery==1.4.0
+    * requests==2.19.1
+    * stanfordcorenlp==3.9.1.1
+    * gensim==3.6.0
+    * numpy==1.15.1
+    * scikit_learn==0.20.2
 2. 已在此文件夹内的原创依赖文件
     * movie_id_9331.json
+      * 9331 部电影的豆瓣ID，爬虫的基础
     * entity.json 
+      * 扩充后的情感本体库
       * 运行create_entity.py可得到
     * labels_90000.json
+      * 从9万豆瓣评论中提取出的标签
       * 运行aspect_based.extract_labels()可得到
 3. 未在此文件夹内的原创依赖文件
     * scores.json 
       * 350万豆瓣评论，已分词，去除非中文内容
       * 运行train_embedding_matrix.create_dataset()可得到
     * embedding_matrix.pickle
+      * gensim词嵌入矩阵
       * 运行train_embedding_matrix.train_embedding_matrix()可得到
     * reviews_chinese.json
       * 10万豆瓣评论，已分词，去除非中文内容，小样本用于方向分析
     * reviews_full.json 
-      * 10万原始豆瓣评论，小样本用于方向分析
+      * 10万原始豆瓣评论，与reviews_chinese.json一一对应，小样本用于方向分析
 4. 未在此文件夹内的非原创依赖文件
     * stanford-corenlp-full-2018-10-05
+      * 斯坦福句法分析Java包 (内含中文支持jar包)
+      * import stanfordcorenlp 可将此Java包封装为Python
 5. 说明
     * 所有未在此文件内的文件下载地址：https://pan.baidu.com/s/1NOUgfCeEJkJYCqm8pVgaew
     * 所有未在此文件内的文件也须与.py放在同一目录下
-    * 具体依赖文件格式，内容，用途详见.py的注释
+    * 具体依赖文件格式，内容，用途，详见.py的注释
 
 # 联系方式
 * 有关项目的任何建议与问题，请联系729020210@qq.com
